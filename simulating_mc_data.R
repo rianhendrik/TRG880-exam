@@ -1,9 +1,10 @@
+#credit is given to Mike Crowson and his YouTube video titled
+#"Steps for simulating multivariate normal data in R" in assisting
+#with the below code. His video may be viewed here:
+#https://www.youtube.com/watch?v=Wk5wlkWY3rw&ab_channel=MikeCrowson
+
 library(JWileymisc)
 library(MASS)
-library(dplyr)
-
-#Step 1: Input correlation matrix (V) and vector of standard deviations (sigma) for use
-#with 'cor2cov' function
 
 n = 1000
 
@@ -11,6 +12,7 @@ n = 1000
 V = matrix(c(1, 0.9567,
              0.9567, 1),
            2, 2)
+
 #vector of standard deviations for variables
 sigma = c(5.578206, 3.177563)
 mu = c(21.28791, 14.87100)
@@ -40,6 +42,6 @@ car::vif(mod)                       #vif shows beyond a doubt that we are dealin
 
 write.csv(d, "mc_data.csv")
 
-  
+
 
 
